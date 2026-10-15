@@ -1,9 +1,10 @@
-import prisma from "../../../lib/prisma";
+import { prisma } from "../../../lib/prisma";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
+
 
     const name =
       typeof body.name === "string" ? body.name.trim() : "";
