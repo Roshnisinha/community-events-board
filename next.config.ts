@@ -1,7 +1,12 @@
+
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  outputFileTracingIncludes: {
+    "/api/events": ["./app/generated/prisma/**/*"],
+    "/api/registrations": ["./app/generated/prisma/**/*"],
+    "/events/[id]": ["./app/generated/prisma/**/*"],
+  },
   experimental: {
     agentFeedback: true,
   },
